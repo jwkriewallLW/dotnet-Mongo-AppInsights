@@ -31,7 +31,7 @@ public class PlaylistController: Controller {
     public async Task<List<Playlist>> Get() {
 
 //            _logger.LogDebug($"Debug test");
-            _logger.LogInformation($"Get Playlist");
+            _logger.LogInformation($"Got Playlist");
 //            _logger.LogWarning($"Warning test");
 //            _logger.LogError($"Error test");
 //            _logger.LogCritical($"Critical test");
