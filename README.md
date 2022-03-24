@@ -28,4 +28,4 @@ For Application Insights, you can find the instrumentation key on the home page 
 --LOGGING--
 Logs will be automatically generated from the current code - find all instances in the Playlist Controller.cs file. 
 An example of a logging message would be _logger.LogInformation($"This is a sample log");
-In PlaylistController.cs, the ILogger is passed through the PlaylistController Constructor. Then, _logger can be used in the code anywhere in the Constructor. Explore the different messages that will be applied when a CRUD operation is run. These messages will show in App Insights!
+In PlaylistController.cs, the ILogger is passed through the PlaylistController Constructor. Then, _logger can be used in the code anywhere in the Constructor. Explore the different messages that will be applied when a CRUD operation is run. These messages will show in App Insights as traces. I am currently experimenting with how to register Information messages and lower into AI as currently it only shows warnings and above.
