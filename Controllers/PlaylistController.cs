@@ -62,7 +62,7 @@ public class PlaylistController: Controller {
     public async Task<IActionResult> Delete(string id) {
         await _mongoDBService.DeleteAsync(id);
 
-        _logger.LogInformation($"Movie ID {id} deleted", id);
+        _logger.LogWarning($"Movie ID {id} deleted", id);
 
         return NoContent();
     }
