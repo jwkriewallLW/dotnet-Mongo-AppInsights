@@ -29,3 +29,12 @@ For Application Insights, you can find the instrumentation key on the home page 
 Logs will be automatically generated from the current code - find all instances in the Playlist Controller.cs file. 
 An example of a logging message would be _logger.LogInformation($"This is a sample log");
 In PlaylistController.cs, the ILogger is passed through the PlaylistController Constructor. Then, _logger can be used in the code anywhere in the Constructor. Explore the different messages that will be applied when a CRUD operation is run. These messages will show in App Insights as traces. I am currently experimenting with how to register Information messages and lower into AI as currently it only shows warnings and above.
+
+I am trying to maintain the ILogger framework which passes in ILogger to the Controller constructor in Playlist Controller. In order for trace messages to be shown in AppInsights, the loglevel of the ILogger message must be sent as _logger.LogWarning() and above. For some reason any logs marked as Information and lower are either not ingested into AI, or are not visible in AI.
+  
+Solutions for logging tried: 
+  Reducing the log levels in appsettings.json and appsettings.Development.json. 
+  Incorporated Trace Logging via AppInsights Trace Listener (https://www.nuget.org/packages/Microsoft.ApplicationInsights.TraceListener)
+    System.Diagnostics.Trace.WriteLine($"Post Movie To Playlist: {playlist}", playlist.username);
+  Turning off Adaptive Sampling (i.e. builder.Services.AddApplicationInsightsTelemetry(opt => opt.EnableAdaptiveSampling = false);)
+  Using TelemetryClient (https://stackoverflow.com/questions/44438334/custom-logging-to-app-insights-from-net-core)
