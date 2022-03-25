@@ -38,3 +38,6 @@ Solutions for logging tried:
     System.Diagnostics.Trace.WriteLine($"Post Movie To Playlist: {playlist}", playlist.username);
   Turning off Adaptive Sampling (i.e. builder.Services.AddApplicationInsightsTelemetry(opt => opt.EnableAdaptiveSampling = false);)
   Using TelemetryClient (https://stackoverflow.com/questions/44438334/custom-logging-to-app-insights-from-net-core)
+  
+  ![image](https://user-images.githubusercontent.com/83727077/160163344-df78a31b-5180-4507-9601-04d6516fb07d.png)
+  Here's a sample of the AppInsights dash view with some data input. Have fun!
